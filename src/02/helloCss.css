@@ -1,0 +1,21 @@
+
+.helloMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(42, 40, 54);
+    /* width: 100vw;
+    height: 100vh; */
+    height: 100%;
+
+}
+
+.imgLogo {
+    width: 400px;
+    height: 400px;
+}
+
+.ch1 {
+    color: cyan;
+}
