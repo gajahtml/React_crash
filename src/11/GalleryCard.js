@@ -22,8 +22,8 @@ export default function GalleryCard({ imgUrl, title, pLocation, kTag }) {
                     border border-1">
       <img className="w-full h-72" src={imgUrl} alt={title} />
       <div className="px-6 py-3">
-        <div className="font-bold text-2xl text-teal-200 mb-2">{title}</div>
-        <p className="text-base text-slate-500">{pLocation}</p>
+        <div className="font-bold text-xl text-teal-200 mb-2">{title}</div>
+        <p className="text-sm text-slate-500">{pLocation}</p>
       </div>
       <div className="px-6 pt-4 pb-2">{kTag}</div>
     </div>

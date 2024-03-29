@@ -18,7 +18,8 @@ import { IoHome } from "react-icons/io5";
 // import BoxOffice from "./05_1/BoxOffice";
 // import GalaryCard from "./11/GalaryCard";
 // import GalleryMain from "./11/GalleryMain";
-import GalleryMain1 from "./11/GalleryMain1";
+// import GalleryMain1 from "./11/GalleryMain1";
+import GalleryMain2 from "./11/GalleryMain2";
 
 function App() {
   // 함수형 컴포넌트, 반드시 return문 있어야 함
@@ -50,7 +51,7 @@ function App() {
                        bg-gray-800
                        ">
         
-        <GalleryMain1 />
+        <GalleryMain2 />
       </main>
       <footer
         className="flex justify-center items-center

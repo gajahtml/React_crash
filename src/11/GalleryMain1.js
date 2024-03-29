@@ -11,10 +11,9 @@ export default function GalleryMain1() {
   const getData = (w) => {
     console.log(w);
 
-    let url = "https://apis.data.go.kr/B551011/PhotoGalleryService1/gallerySearchList1?";
-    url = url + `serviceKey=${process.env.REACT_APP_APIKEY}`;
-    url = url + "&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A";
-    url = url + `&keyword=${w}&_type=json`;
+    let url = "https://apis.data.go.kr/6260000/FestivalService/getFestivalKr";
+    url = url + `?serviceKey=${process.env.REACT_APP_APIKEY}`;
+    url = url + "&pageNo=1&numOfRows=10&resultType=json";
 
     fetch(url)
       .then((resp) => resp.json())
