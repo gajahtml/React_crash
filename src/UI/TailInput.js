@@ -6,6 +6,6 @@ export default function TailInput({type, inputRef, handleChange, ph}) {
             ref={inputRef}
             onChange={handleChange}             
             placeholder={ph}
-            className="w-30 h-10 rounded-md " />
+            className="w-4/5 h-10 rounded-md" />
   )
 }

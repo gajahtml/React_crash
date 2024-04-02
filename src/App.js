@@ -1,5 +1,7 @@
 import "./App.css";
 import { IoHome } from "react-icons/io5";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
 // import MainHeader from "./01/MainHeader";
 // import Hello from "./01/Hello";
 // import Logo from "./01/Logo";
@@ -7,11 +9,14 @@ import { IoHome } from "react-icons/io5";
 // import HelloCss from "./02/HelloCss";
 // import MyDiv1 from "./03_1/MyDiv1";
 // import MyListMain from "./04/MyListMain";
-// import BoxOfficeTb from "./05_1/BoxOfficeTb";
-// import Lotto from "./06/Lotto";
+// import BoxOffice from "./05_1/BoxOffice";
+import Lotto from "./06/Lotto";
 // import FoodCard from "./07/FoodCard";
-// import FoodMain from "./07/FoodMain";
-// import MyClock from "./08/MyClock";
+import FoodMain from "./07/FoodMain";
+import MyClock from "./08/MyClock";
+import Frcst from "./14/Frcst";
+import UltraSrtFcst from "./14/UltraSrtFcst";
+import VilageFcst from "./14/VilageFcst";
 // import TrafficMain from "./09/TrafficMain";
 // import RefVal from "./10/RefVal";
 // import RefInput from "./10/RefInput";
@@ -19,50 +24,78 @@ import { IoHome } from "react-icons/io5";
 // import GalaryCard from "./11/GalaryCard";
 // import GalleryMain from "./11/GalleryMain";
 // import GalleryMain1 from "./11/GalleryMain1";
-import GalleryMain2 from "./11/GalleryMain2";
+// import GalleryMain2 from "./11/GalleryMain2";
+// import RouteMain from "./13/RouteMain";
 
 function App() {
   // 함수형 컴포넌트, 반드시 return문 있어야 함
+
   return (
-    <div
-      className="flex flex-col
-                    w-full max-w-screen-xl
-                    h-screen
-                    mx-auto
-                    overscroll-y-auto
-                    "
-    >
-      <header
-        className="flex justify-between items-center
-                         h-20 p-10
-                         text-2xl font-bold text-slate-300
-                         bg-gray-700
-                         border-b-2 border-yellow-100
-                         "
+    <BrowserRouter>
+      <div
+        className="flex flex-col
+                      w-full max-w-screen-xl
+                      h-screen
+                      mx-auto
+                      overscroll-y-auto
+                      "
       >
-        <div>리액트실습</div>
-        <div>
-          <IoHome className="text-4xl text-blue-400" />
-        </div>
-      </header>
-      <main
-        className="grow flex flex-col
-                       justify-center items-center
-                       bg-gray-800
-                       ">
-        
-        <GalleryMain2 />
-      </main>
-      <footer
-        className="flex justify-center items-center
-                         bg-black
-                         text-base font-bold text-white
-                         h-20 
-                         "
-      >
-        ⓒ 2024 Jang Minwoo. All rights reserved.
-      </footer>
-    </div>
+        <header
+          className="flex justify-between items-center
+                           h-20 p-10
+                           text-2xl font-bold text-slate-300
+                           bg-gray-700
+                           border-b-2 border-yellow-100
+                           "
+        >
+          <div>리액트실습</div>
+          <div>
+            <Link to="/">
+              <IoHome className="text-4xl text-blue-400" />
+            </Link>
+          </div>
+        </header>
+        <nav
+          className="flex justify-start items-center
+                           h-10
+                           text-xl font-bold text-slate-300
+                           bg-gray-800
+                           "
+        >
+          <Link to="/Lotto" className="mx-10">
+            Lotto
+          </Link>
+          <Link to="/Food" className="mr-10">
+            Food
+          </Link>
+          <Link to="/Frcst" className="mr-10">
+            Weather
+          </Link>
+        </nav>
+        <main className="grow flex flex-col
+                         justify-center items-center
+                         bg-gray-800
+                         ">
+          <Routes>
+            <Route path="/" element={<MyClock />} />
+            <Route path="/Lotto" element={<Lotto />} />
+            <Route path="/Food" element={<FoodMain />} />
+            <Route path="/Frcst" element={<Frcst />} />
+            <Route path="/Ultra/:dt/:area/:x/:y" element={<UltraSrtFcst />} />
+            <Route path="/Vilage/:dt/:area/:x/:y" element={<VilageFcst />} />
+          </Routes>
+        </main>
+        <footer
+          className="flex justify-center items-center
+                           bg-black
+                           text-base font-bold text-white
+                           h-20
+                           "
+        >
+          ⓒ 2024 Jang Minwoo. All rights reserved.
+        </footer>
+      </div>
+    </BrowserRouter>
   );
 }
 

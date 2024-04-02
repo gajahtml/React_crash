@@ -63,9 +63,12 @@ export default function BoxOffice() {
             className=""
           />
         </div>
+        <div>
+          {trs}
+        </div>
       </div>
 
-      {/* <BoxOfficeInfo mov={mov} /> */}
+      <BoxOfficeInfo mov={mov} />
     </div>
   );
 }
