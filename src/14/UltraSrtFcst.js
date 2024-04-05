@@ -8,6 +8,7 @@ export default function UltraSrtFcst() {
   const area = useParams().area;
   const x = useParams().x;
   const y = useParams().y;
+  
   const [ultraDt, setUltraDt] = useState();
   const [tags, setTags] = useState();
   const [selItem, setSelItem] = useState();
@@ -22,7 +23,7 @@ export default function UltraSrtFcst() {
   const itemRef = useRef();
 
   const handleItem = () => {
-    if(itemRef.current.value === ''){
+    if(itemRef.current.value === '' || itemRef.current.value === undefined){
       alert('항목을 선택하세요');
       itemRef.current.focus();
       return;
@@ -31,26 +32,9 @@ export default function UltraSrtFcst() {
     setSelItemName(itemRef.current.value.split('(')[0]);
     setSelItem(itemRef.current.value.split('(')[1].replace(')', ''));
     console.log(selItem);
-    console.log(selItemName);
-    // let tmp = ultraDt
-    //   .filter((item) => item["category"] === itemRef.current.value)
-    //   .map((item) => 
-    //     <tr class="bg-white border-b hover:bg-gray-50">
-    //       <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-    //         {item["category"]}
-    //       </th>
-    //       <td class="px-6 py-4">{`${item["fcstDate"].substr(0, 4)}/${item["fcstDate"].substr(4, 2)}/${item[
-    //         "fcstDate"
-    //       ].substr(6, 2)}`}</td>
-    //       <td class="px-6 py-4">{`${item["fcstTime"].substr(0, 2)} : ${item["fcstTime"].substr(2, 2)}`}</td>
-    //       <td class="px-6 py-4">{item["fcstValue"]}</td>
-    //     </tr>
-    //   );
-
-    //   setTags(tmp);
+    console.log(selItemName);   
   };
 
-  // console.log(dt, area, x, y);
 
   const getData = async (url) => {
     const resp = await fetch(url);
@@ -94,26 +78,26 @@ export default function UltraSrtFcst() {
   }, [selItem]);
 
   return (
-    <div class="w-3/5 h-auto mt-5">
+    <div className="w-3/5 h-full pt-20">
       <div className="w/full flex justify-between mb-10">
         <p className="text-xl text-white font-bold">
           {`${area} ${gubun} (${dt.substring(0, 4)}/${dt.substring(4, 6)}/${dt.substring(6, 8)})`}
         </p>
         <TailSelect ops={ops} opDefault="선택" selRef={itemRef} handleSel={handleItem} />
       </div>
-      <table class="w-full text-sm text-left rtl:text-right text-gray-500">
-        <thead class="text-sm text-gray-700 uppercase bg-gray-300">
+      <table className="w-full text-sm text-left rtl:text-right text-gray-500">
+        <thead className="text-sm text-gray-700 uppercase bg-gray-300">
           <tr>
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" className="px-6 py-3">
               항목명
             </th>
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" className="px-6 py-3">
               예측일자
             </th>
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" className="px-6 py-3">
               예측시간
             </th>
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" className="px-6 py-3">
               예측값
             </th>
           </tr>

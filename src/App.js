@@ -14,9 +14,13 @@ import Lotto from "./06/Lotto";
 // import FoodCard from "./07/FoodCard";
 import FoodMain from "./07/FoodMain";
 import MyClock from "./08/MyClock";
-import Frcst from "./14/Frcst";
-import UltraSrtFcst from "./14/UltraSrtFcst";
-import VilageFcst from "./14/VilageFcst";
+// import Frcst from "./14/Frcst";
+import Frcst2 from "./14/Frcst2";
+import FrcstList from "./14/FrcstList";
+// import Recoil from "./15/Recoil";
+import RecoilMain from "./15/RecoilMain";
+// import UltraSrtFcst from "./14/UltraSrtFcst";
+// import VillageFcst from "./14/VillageFcst";
 // import TrafficMain from "./09/TrafficMain";
 // import RefVal from "./10/RefVal";
 // import RefInput from "./10/RefInput";
@@ -68,8 +72,11 @@ function App() {
           <Link to="/Food" className="mr-10">
             Food
           </Link>
-          <Link to="/Frcst" className="mr-10">
+          <Link to="/Frcst2" className="mr-10">
             Weather
+          </Link>
+          <Link to="/Recoil" className="mr-10">
+            Recoil
           </Link>
         </nav>
         <main className="grow flex flex-col
@@ -80,9 +87,9 @@ function App() {
             <Route path="/" element={<MyClock />} />
             <Route path="/Lotto" element={<Lotto />} />
             <Route path="/Food" element={<FoodMain />} />
-            <Route path="/Frcst" element={<Frcst />} />
-            <Route path="/Ultra/:dt/:area/:x/:y" element={<UltraSrtFcst />} />
-            <Route path="/Vilage/:dt/:area/:x/:y" element={<VilageFcst />} />
+            <Route path="/Frcst2" element={<Frcst2 />} />
+            <Route path="/FrcstList" element={<FrcstList />} />
+            <Route path="/Recoil" element={<RecoilMain />} />
           </Routes>
         </main>
         <footer

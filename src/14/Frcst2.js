@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import getxy from "./getxy.json";
 
-export default function Frcst() {
+export default function Frcst2() {
   const ops = getxy.map((item) => item["1단계"]);
   const navigator = useNavigate();
 
@@ -53,7 +53,13 @@ export default function Frcst() {
       return;
     }
 
-    navigator(`/${loc}/${dateInfo}/${sRef.current.value}/${x}/${y}`);
+    // navigator(`/${loc}/${dateInfo}/${sRef.current.value}/${x}/${y}`);
+    
+    let gubun = '';
+    if(loc === 'ultra') gubun = '초단기예보'
+    else gubun = '단기예보';
+    
+    navigator(`/FrcstList?dt=${dateInfo}&area=${area}&x=${x}&y=${y}&gubun=${gubun}`);
   };
 
   return (
